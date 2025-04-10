@@ -9,7 +9,7 @@ class Generator(nn.Module):
     def __init__(self, noise_dim: int = 100) -> None:
         super(Generator, self).__init__()
         self.model = nn.Sequential(
-            nn.Sequential(noise_dim, 256),
+            nn.Linear(noise_dim, 256),
             nn.ReLU(),
             nn.Linear(256, 512),
             nn.ReLU(),
