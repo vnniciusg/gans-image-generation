@@ -8,9 +8,9 @@ The GAN framework consists of two neural networks, a Generator $(G)$ and a Discr
 
 The objective function for the GAN can be expressed as a minimax game:
 
-$$
-\min_G \max_D \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
-$$
+<div align="center" class="equation">
+   <img src='assets/gan_equation.png' alt='GAN Objective Function' width='500'/>
+</div>
 
 Where:
 
