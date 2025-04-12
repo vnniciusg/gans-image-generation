@@ -58,6 +58,24 @@ Where:
 
    Checkpoints will be saved in the `checkpoints` directory.
 
+3. Visualize the training metrics:
+
+   ```bash
+   tensorboard --logdir=logs
+   ```
+
+4. To vizualize the generated images, run:
+
+   ```bash
+   uv run .\main.py <path_to_checkpoint>
+   ```
+
+## Results
+
+After training the GAN for 10 epochs, the following images were generated, showcasing the model's ability to create realistic outputs from random noise:
+
+![Generated Images](assets/10_epochs.png)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
