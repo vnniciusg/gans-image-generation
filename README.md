@@ -41,10 +41,12 @@ Where:
 
 ## Requirements
 
-- Python >= 3.11
-- PyTorch >= 2.6.0
-- TorchVision >= 0.21.0
-- Matplotlib >= 3.10.1
+- loguru >= 0.7.3
+- matplotlib >= 3.10.1
+- tensorboard >= 2.19.0
+- torch >= 2.6.0
+- torchvision >= 0.21.0
+- typer >= 0.15.2
 
 ## Usage
 
