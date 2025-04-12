@@ -1,10 +1,13 @@
-from pathlib import Path
-
 import torch
+import typer
+from pathlib import Path
 
 from src.config import Config
 from src.model.generative import Generator
 from src.utils import generate_and_show_images
+
+
+app = typer.Typer()
 
 
 def load_model(checkpoint_path: Path, config: Config, device: torch.device) -> Generator:
@@ -27,11 +30,13 @@ def load_model(checkpoint_path: Path, config: Config, device: torch.device) -> G
     return generator
 
 
-def main():
+@app.command()
+def main(checkpoint_path: Path = typer.Argument(..., help="path to the .pth checkpoint file")):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     config = Config()
-    generator = load_model(Path("checkpoints/20250412_061530/best_model_20250412_061530.pth"), config, device)
+    generator = load_model(checkpoint_path, config, device)
     generate_and_show_images(generator, device=device, noise_dim=config.NOISE_DIM)
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    app()
