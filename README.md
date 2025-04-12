@@ -29,10 +29,14 @@ Where:
 ├── pyproject.toml        # Project configuration and dependencies
 ├── README.md             # Project documentation
 ├── src/                  # Source code for the project
+│   ├── config/           # Configuration file for the project
 │   ├── data/             # Data loading and preprocessing utilities
 │   ├── model/            # GAN model components (Generator and Discriminator)
 │   ├── train/            # Training loop and related utilities
 │   └── utils/            # Helper functions and utilities
+├── assets/               # Generated images and other assets
+├── checkpoints/          # Directory for saving model checkpoints
+├── logs/                 # Directory for TensorBoard logs
 ```
 
 ## Requirements
