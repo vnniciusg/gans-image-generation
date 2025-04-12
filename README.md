@@ -2,6 +2,26 @@
 
 This project implements Generative Adversarial Networks (GANs) for image generation using PyTorch.
 
+## Mathematical Theory
+
+The GAN framework consists of two neural networks, a Generator $(G)$ and a Discriminator $(D)$, that are trained simultaneously. The Generator tries to create realistic images from random noise, while the Discriminator tries to distinguish between real and generated images.
+
+The objective function for the GAN can be expressed as a minimax game:
+
+$$
+\min_G \max_D \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+$$
+
+Where:
+
+- $G$: The Generator network
+- $D$: The Discriminator network
+- $x$: A real image sampled from the data distribution $p_{\text{data}}(x)$
+- $z$: A random noise vector sampled from a prior distribution $p_z(z)$
+- $D(x)$: The probability that $x$ is a real image (output of the Discriminator)
+- $G(z)$: The generated image from the random noise $z$
+- $D(G(z))$: The probability that the generated image $G(z)$ is real (output of the Discriminator)
+
 ## Project Structure
 
 ```
@@ -45,3 +65,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## References
 
 - [4 Best PyTorch Projects for Beginners](https://medium.com/@amit25173/4-best-pytorch-projects-for-beginners-b88049a44fa2)
+
+- [Generative Adversarial Networks (GANs)](https://arxiv.org/abs/1406.2661)
+
+- [GANs in PyTorch](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
